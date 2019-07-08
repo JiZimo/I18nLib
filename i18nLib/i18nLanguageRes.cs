@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace i18nLib
+namespace I18nLib
 {
     /// <summary>
     /// 该类提供了一个多语言数据库，对应用中的文本信息进行硬编码，从而得到应用国际化的效果
@@ -30,7 +30,7 @@ namespace i18nLib
         /// I18nLanguageRes的构造函数
         /// </summary>
         /// <param name="supportLang">支持的语言列表</param>
-        public I18nLanguageRes(string[] supportLang)
+        public I18nLanguageRes(params string[] supportLang)
         {
             langName = supportLang;
             dictSize = langName.Length;
@@ -54,7 +54,7 @@ namespace i18nLib
             return pair.Key;
         }
 
-        public string AddItem(string key, string[] value)
+        public string AddItem(string key, params string[] value)
         {
             return AddItem(new KeyValuePair<string, string[]>(key, value));
         }
