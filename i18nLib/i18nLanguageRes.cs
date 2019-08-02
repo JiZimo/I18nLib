@@ -85,7 +85,7 @@ namespace I18nLib
         }
 
         /// <summary>
-        /// 获取指定的文本名称所对应的文本
+        /// 获取指定的文本名称所对应的文本（现已不支持使用，请使用索引器）
         /// </summary>
         /// <param name="textName">文本名称</param>
         /// <returns>文本</returns>
@@ -102,6 +102,14 @@ namespace I18nLib
                         return s;
                 }
             throw new ArgumentOutOfRangeException("All of the elements in "+textName+" are null");
+        }
+
+        public string this[string textName]
+        {
+            get
+            {
+                return GetText(textName);
+            }
         }
 
     }
